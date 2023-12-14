@@ -16,11 +16,11 @@ jobs: # esto es la forma que ve github para automatizar
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       - name: Setup Nodejs
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
           cache: "npm"
           cache-dependency-path: ./api/package-lock.json
       - name: install
@@ -33,11 +33,11 @@ jobs: # esto es la forma que ve github para automatizar
     runs-on: ubuntu-latest # aqui le decimos en que maquina corra
     steps: # pasos a seguir
       - name: Checkout # rama en la que trabajara
-        uses: actions/checkout@v2 # este es un comando que tiene github actions para hacer esta parte de la clonacion
+        uses: actions/checkout@v3 # este es un comando que tiene github actions para hacer esta parte de la clonacion
       - name: Setup Nodejs
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with: # que necesitara node
-          node-version: 20
+          node-version: 18
           cache: "npm"
           cache-dependency-path: ./api/package-lock.json
       - name: install # instalaciones que necesitarea
