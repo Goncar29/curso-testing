@@ -13,7 +13,7 @@ defaults:
 
 jobs: # esto es la forma que ve github para automatizar
     unit-test:  # este sera el nombre que le pongamos
-        runs-on: ubuntu-latest # aqui le decimos en que maquina corra
+        runs-on: windows-latest # aqui le decimos en que maquina corra
         stepss: # pasos a seguir
             - name: Checkout # rama en la que trabajara
             uses: actions/checkout@v2 # este es un comando que tiene github actions para hacer esta parte de la clonacion
