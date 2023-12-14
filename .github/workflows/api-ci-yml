@@ -20,7 +20,7 @@ jobs: # esto es la forma que ve github para automatizar
             - name: Setup Nosejs
             uses: actions/setup-node@v2
             with: # que necesitara node
-                nose-version: 14
+                node-version: 18
                 cache: 'npm'
                 cache-dependency-path: ./api/package-lock.json
             - name: install # instalaciones que necesitarea
