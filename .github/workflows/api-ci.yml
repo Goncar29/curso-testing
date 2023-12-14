@@ -16,16 +16,16 @@ jobs: # esto es la forma que ve github para automatizar
         runs-on: ubuntu-latest # aqui le decimos en que maquina corra
         steps: # pasos a seguir
             - name: Checkout # rama en la que trabajara
-            uses: actions/checkout@v2 # este es un comando que tiene github actions para hacer esta parte de la clonacion
+              uses: actions/checkout@v2 # este es un comando que tiene github actions para hacer esta parte de la clonacion
             - name: Setup Nosejs
-            uses: actions/setup-node@v2
-            with: # que necesitara node
+              uses: actions/setup-node@v2
+              with: # que necesitara node
                 node-version: 18
                 cache: 'npm'
                 cache-dependency-path: ./api/package-lock.json
             - name: install # instalaciones que necesitarea
-            shell: bash # terminal para que corra el siguiente comando en run
-            run: npm ci # instala una dependencia de integracion continua
+              shell: bash # terminal para que corra el siguiente comando en run
+              run: npm ci # instala una dependencia de integracion continua
             - name: run unit test
-            shell: bash # terminal para que corra el siguiente comando en run
-            run: npm run test # va a correr el test
+              shell: bash # terminal para que corra el siguiente comando en run
+              run: npm run test # va a correr el test
