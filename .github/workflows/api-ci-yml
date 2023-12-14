@@ -5,7 +5,7 @@ on:
     push: #haremos push cuando realicemos cambios en la carpeta api y api.ci.yml
         paths:
             - "./api/**"
-            - ".github/workflows/api.ci.yml"
+            - ".github/workflows/api-ci.yml"
 
 defaults:
     run:
