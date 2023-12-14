@@ -1,0 +1,31 @@
+name: API CI
+
+#on: [push] (esto haria push cuando hicieramos cambios)
+on:
+    push: #haremos push cuando realicemos cambios en la carpeta api y api.ci.yml
+        paths:
+            - "./api/**"
+            - ".github/workflows/api.ci.yml"
+
+defaults:
+    run:
+        working-directory: ./api
+
+jobs: # esto es la forma que ve github para automatizar
+    unit-test:  # este sera el nombre que le pongamos
+        runs-on: ubuntu-latest # aqui le decimos en que maquina corra
+        stepss: # pasos a seguir
+            - name: Checkout # rama en la que trabajara
+            uses: actions/checkout@v2 # este es un comando que tiene github actions para hacer esta parte de la clonacion
+            - name: Setup Nosejs
+            uses: actions/setup-node@v2
+            with: # que necesitara node
+                nose-version: 14
+                cache: 'npm'
+                cache-dependency-path: ./api/package-lock.json
+            - name: install # instalaciones que necesitarea
+            shell: bash # terminal para que corra el siguiente comando en run
+            run: npm ci # instala una dependencia de integracion continua
+            - name: run unit test
+            shell: bash # terminal para que corra el siguiente comando en run
+            run: npm run test # va a correr el test
