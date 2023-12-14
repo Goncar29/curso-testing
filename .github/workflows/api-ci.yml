@@ -17,7 +17,7 @@ jobs: # esto es la forma que ve github para automatizar
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Nosejs
+      - name: Setup Nodejs
         uses: actions/setup-node@v2
         with:
           node-version: 16
@@ -34,7 +34,7 @@ jobs: # esto es la forma que ve github para automatizar
     steps: # pasos a seguir
       - name: Checkout # rama en la que trabajara
         uses: actions/checkout@v2 # este es un comando que tiene github actions para hacer esta parte de la clonacion
-      - name: Setup Nosejs
+      - name: Setup Nodejs
         uses: actions/setup-node@v2
         with: # que necesitara node
           node-version: 16
